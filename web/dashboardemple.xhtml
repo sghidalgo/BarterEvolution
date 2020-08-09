@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <h:head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="dash/css/main.css"/>
+    <!-- Font-icon css-->
+    <link rel="icon" type="image/png" href="./resources/img/HORIZONTAL_LOGO-removebg-preview.png" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  </h:head>
+    <body class="app sidebar-mini">
+           <header class="app-header"><a class="app-header__logo " href="index.html">Barter <span>Evolution</span> </a>
+      <!-- Sidebar botin toggle --><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Menu Lateral-->
+      <ul class="app-nav">
+
+        <!--Notificacion Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-right">
+            <li class="app-notification__title">Tienes 3 notificaciones nuevas.</li>
+            <div class="app-notification__content">
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Articulos no disponibles</p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Prorrogas pronto a vencerse</p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a></li>
+              <div class="app-notification__content">
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">Camara Sony para la venta</p>
+                      <p class="app-notification__meta">2 min ago</p>
+                    </div></a></li>
+              </div>
+            </div>
+            <li class="app-notification__footer"><a href="#">  Ver todas las notificaciones.</a></li>
+          </ul>
+        </li>
+        <!-- User Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <h:form>  
+            <li><h:commandLink class="dropdown-item" action="./html/mi cuenta/form-cuenta.html" target="principal"><i class="fa fa-user fa-lg espacio"></i><span  class="lang " key="cuenta">Mi Cuenta</span></h:commandLink></li>
+            <li><h:commandLink class="dropdown-item" action="#{loginBean.logout()}" ><i class="fa fa-sign-out fa-lg"></i>  <span  class="lang " key="cerrar">Cerra Sesión</span></h:commandLink></li>
+            </h:form>  
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="dash/img/usuario.png" alt="Imagen de usuario"/>
+        <div>
+          <p class="app-sidebar__user-name">Christian Delgadillo</p>
+          <p class="rol">Empleado</p>
+        </div>
+      </div>
+      <ul class="app-menu">
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio"  src="dash/img/contrato (4).png" alt=""/><span class="lang app-menu__label" key="contratosa">Contratos</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <h:form>  
+            <li><h:commandLink class="treeview-item" action="cclientese" target="principal"><i><img class="espacio"  src="dash/img/cliente.png" alt=""/></i><span class="lang " key="clientes">Clientes</span></h:commandLink></li>
+            <li><h:commandLink class="treeview-item" action="carticulose" target="principal"><i><img class="espacio"  src="dash/img/articulo.png" alt=""/></i><span class="lang " key="articulos">Artículos</span></h:commandLink></li>
+             <li><h:commandLink class="treeview-item" action="clegalidad" target="principal"><i><img class="espacio"  src="dash/img/ley.png" alt=""/></i><span class="lang " key="legalidada">Legalidad Articulo</span></h:commandLink></li>
+            <li><h:commandLink class="treeview-item" action="ccontratose" target="principal"><i><img class="espacio"  src="dash/img/firma.png" alt=""/></i><span class="lang " key="contratosb"> Contratos</span></h:commandLink></li>
+            <li><h:commandLink class="treeview-item" action="cprorrogase" target="principal"><i><img class="espacio"  src="dash/img/prorroga.png" alt=""/></i><span class="lang " key="prorrogas">Prórrogas</span></h:commandLink></li>
+          </h:form>  
+          </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio"  src="dash/img/inventario (5).png" alt=""/><span class="lang app-menu__label" key="inventario">Inventario</span><i class="treeview-indicator fa fa-angle-right" ></i></a>
+          <ul class="treeview-menu"> 
+            <h:form>  
+                <li><h:commandLink class="treeview-item" action="carticulose" target="principal"><i><img class="espacio"  src="dash/img/negocios-y-finanzas.png"  alt=""/></i><span class="lang " key="rarticulo">Registrar Artículos</span></h:commandLink></li>
+            <li><h:commandLink class="treeview-item" action="cinventarioe" target="principal"><i><img class="espacio"  src="dash/img/inventario (9).png" alt=""/></i><span class="lang " key="rinventario">Registrar Inventario</span></h:commandLink></li>
+            </h:form>  
+          </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio"  src="dash/img/rebaja.png" alt=""/><span class="lang app-menu__label" key="ventasa">Ventas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <h:form>  
+            <li><h:commandLink class="treeview-item" action="cclientese" target="principal"><i><img class="espacio"  src="dash/img/valor (1).png" alt=""/></i><span class="lang " key="clientesv" >Clientes</span></h:commandLink></li>
+            <li><h:commandLink class="treeview-item" action="cventase" target="principal"><i><img class="espacio"  src="dash/img/ventas.png" alt=""/></i><span class="lang " key="ventasb">Ventas</span></h:commandLink></li>
+           </h:form>  
+          </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio"  src="dash/img/grupo.png" alt=""/><span class="lang app-menu__label" key="usuarios">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <h:form>  
+            <li><h:commandLink class="treeview-item" action="cusuariose" target="principal"><i><img class="espacio"  src="dash/img/registro.png" alt=""/></i><span class="lang " key="rusuarios">Registrar Usuarios</span></h:commandLink></li>
+            </h:form>  
+          </ul>
+        </li>  
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio"  src="dash/img/tema (1).png" alt=""/><span class="lang app-menu__label" key="idiomas">Idiomas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <h:form>  
+            <li><h:commandLink action="javascript:cambia_enlace_español();" class="translate treeview-item"  target="principal" id="es"><i><img class="espacio"  src="dash/img/espana.png" alt=""/></i><span class="lang " key="español">Español</span></h:commandLink></li>
+            <li><h:commandLink action="javascript:cambia_enlace();" class="translate treeview-item"  target="principal" id="en"><i><img class="espacio"  src="dash/img/inglaterra.png" alt=""/></i><span class="lang " key="ingles" >Ingles</span></h:commandLink></li>
+            </h:form>  
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="app-content">
+      <div class="row">
+        <div class="cont-formularios col-12">
+        <iframe name="principal" scrolling="no" src="" ></iframe>
+        </div>
+        </div>
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="dash/js/jquery-3.3.1.min.js"></script>
+    <script src="dash/js/popper.min.js"></script>
+    <script src="dash/js/bootstrap.min.js"></script>
+    <script src="dash/js/main.js"></script>
+    <script type="text/javascript">
+      var arrLang ={
+        'en':{
+       "inicio":"Star",
+       "contratosa":"Contracts",
+       "clientes":"Customers",
+       "contratosb":"Contracts",
+       "articulos":"Items",
+       "prorrogas":"Extension",
+       "inventario":"Stock",
+       "rarticulo":"Register Items",
+       "rinventario":"Register Inventory",
+       "ventasa":"Sales",
+       "clientesv":"Customers",
+       "ventasb":"Sales",
+       "catalogo":"Catalogue",
+       "idiomas":"Languages",
+       "español":"Spanish ",
+       "ingles":"English",
+       "cuenta":"My Account",
+       "cerrar":"Sign Out "
+      
+        },
+        'es':{
+       "inicio":"Inicio",
+       "contratosa":"Contratos",
+       "clientes":"Clientes",
+       "contratosb":"Contratos",
+       "articulos":"Articulos",
+       "prorrogas":"Prorrogas",
+       "inventario":"Inventario",
+       "rarticulo":"Registrar Articulo",
+       "rinventario":"Registrar Inventario",
+       "ventasa":"Ventas",
+       "clientesv":"Clientes",
+       "ventasb":"Ventas",
+       "catalogo":"Catalogo",
+       "idiomas":"Idiomas",
+       "español":"Español",
+       "ingles":"Ingles",
+       "cuenta":"Mi cuenta",
+       "cerrar":"Cerrar Sesion"
+        }
+      };
+      $(function(){
+        $('.translate').click(function(){
+          var lang = $(this).attr('id');
+          $('.lang').each(function(dashboardadministador,element){
+            $(this).text(arrLang[lang][$(this).attr('key')]);
+           
+          });
+        });
+      });
+     </script>
+     <script>
+       function cambia_enlace(){
+         $('#contrato').prop('href','./html/ingles/form-Contracts Sales/form-contracts.html'); 
+         $('#cliente').prop('href','./html/ingles/form-Contracts Sales/form-customer.html'); 
+         $('#prorroga').prop('href','./html/ingles/form-Contracts Sales/form-extension.html'); 
+         $('#articulo').prop('href','./html/ingles/form-Contracts Sales/form-items.html'); 
+         document.getElementById("mensaje").innerHTML = "¡Welcome, Samanta Hidalgo!"; 
+       }
+   
+       </script>
+       <script>
+         function cambia_enlace_español(){
+           $('#contrato').prop('href','./html/formularios contratos/form-contrato.html'); 
+           $('#cliente').prop('href','./html/formularios contratos/formcliente.html'); 
+           $('#prorroga').prop('href','./html/formularios contratos/form-prorroga.html'); 
+           $('#articulo').prop('href','./html/formularios contratos/form-articulo.htmll'); 
+           document.getElementById("mensaje").innerHTML = "¡Bienvenid@, Samanta Hidalgo!"; 
+         }
+     
+         </script>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Lista prorrogas</title>
+         <link href="../resources/css/tablar.css" rel="stylesheet" type="text/css"/>
+         <link href="../resources/Bootstrap 4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </h:head>
+
+    <h:body class="color">
+            
+            <h:form styleClass="jsfcrud_list_form" class="pag" >
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>                    
+                </h:panelGroup>
+                <h1 class="tituloo" >Lista Prorrogas</h1> 
+             
+             
+<div class="row ">
+<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">    
+<p:commandButton value="Buscar"/>
+<p:inputText  class="texto"/>
+</div>    
+    
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+<h:commandButton action="#{prorrogasController.prepareCreate}" value="Generar Prórroga" class="btncrear"/>  
+<h:commandButton class="btnexportar" value="Exportar a Excel" >
+<p:dataExporter type="xls" target="datapro" fileName="ListaProrrogas" /> 
+</h:commandButton> 
+
+</div>
+</div>
+<br></br>               
+<h:outputText  escape="false" value="#{bundle.ListProrrogasEmpty}" rendered="#{prorrogasController.items.rowCount == 0}"/>
+<h:panelGroup rendered="#{prorrogasController.items.rowCount > 0}">
+<div class="row paglis" >
+<div class="col-3 colorpag" > </div>  
+                 <div class="col-2 color1"  >
+                 <h:outputText class="letra" value="#{prorrogasController.pagination.pageFirstItem + 1}..#{prorrogasController.pagination.pageLastItem + 1} de #{prorrogasController.pagination.itemsCount}"/>&nbsp;    
+                 </div>
+                 <div class="col-2 color1">
+                <h:commandLink class="letra" action="#{prorrogasController.previous}" value="Anterior" rendered="#{prorrogasController.pagination.hasPreviousPage}">    
+                 <i><img  src="../resources/img/flechaizqu.png" alt="" /></i>
+                 </h:commandLink> &nbsp;
+                 </div>
+                 <div class="col-2 color1">
+                     <h:commandLink class="letra" action="#{prorrogasController.next}" value="Siguiente" rendered="#{prorrogasController.pagination.hasNextPage}"> 
+                     <i><img  src="../resources/img/flechader.png" alt="" /></i>
+                     </h:commandLink>&nbsp;    
+                 </div>
+                 <div class="col-3 colorpag1"></div>
+             </div>                 
+
+                    <p:dataTable id="datapro" var="item" value="#{prorrogasController.items}" reflow="true" rows="10" paginator="false">
+                        <p:column class="ancho"  >
+                         <h:commandButton action="#{prorrogasController.prepareView}" value="Consultar" class="btnver boton-outlines consulpro"  />
+                         </p:column> 
+                        <p:column headerText="No. prórroga" class="ancho"  >
+                            <h:outputText value="#{item.noprorroga}" />
+                        </p:column>
+ 
+                        <p:column headerText="Fecha inicio" class="ancho" >
+                            <h:outputText value="#{item.fechainicioprorroga}" >
+                             <f:convertDateTime pattern="MM/dd/yyyy" />
+                             </h:outputText>
+                        </p:column>
+
+                        <p:column headerText="Fecha venc." class="ancho" >
+                            <h:outputText value="#{item.fechavencimientoprorroga}" >
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText> 
+                        </p:column>
+
+                        <p:column headerText="Meses a pagar" class="ancho">
+                            <h:outputText value="#{item.mesesapagar}" />
+                        </p:column>
+                        
+                        <p:column headerText="Valor" class="ancho">
+                            <h:outputText value="#{item.valormes}" />
+                        </p:column>
+                        
+                        <p:column headerText="Días vencidos" class="ancho"  >
+                            <h:outputText value="#{item.diasvencidos}" />
+                        </p:column>
+                        
+                        <p:column headerText="No. contrato" class="ancho">
+                            <h:outputText value="#{item.nocontrato}" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                  <div class="row paglis" >           
+                                 
+                 <div class="col-12 color1 bordes">
+                
+                 </div>
+                 </div>   
+                </h:panelGroup>             
+                <br />
+               
+
+</h:form>
+        
+ <script src="../resources/js/bootstrap.min.js" type="text/javascript"></script>
+        
+</h:body>
+</html>      

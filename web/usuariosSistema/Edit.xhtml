@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+  <h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/css/animate.min.css"/>
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/cssmodcontrato.css"/>
+   <title>Modificar usuario</title>
+   </h:head>
+
+    
+<body>
+
+
+<div class=" container">
+<div class="row justify-content-center">
+<div class="col-12 cont">
+<div class="row">       
+
+   
+    
+<!-- Titulo Formulario -->    
+
+<div class="col-11">
+<h6 class="animated bounceInLeft" >MODIFICAR USUARIO SISTEMA</h6>
+<hr class="lineatitulo"></hr>
+</div>
+</div>
+    
+
+    
+<h:form class="needs-validation">  
+<div class="row">
+
+    
+    
+
+<!-- Caja 1 titulo informacion articulo --> 
+<div class="form-row justify-content-center" >
+<div class="cajaform row">
+<div class="col-12 tit">Información Personal</div>    
+
+<!-- campo tipo de documento -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputLabel value="Tipo de documento:" for="iddocumento" class="input-group-text"/>
+</div>  
+<h:selectOneMenu id="iddocumento" value="#{usuariosSistemaController.selected.iddocumento}" title="#{bundle.EditUsuariosSistemaTitle_iddocumento}" required="true" requiredMessage="Debes seleccionar una opción" class="form-control">
+<f:selectItems value="#{tipoDocumentoController.itemsAvailableSelectOne}"/>
+</h:selectOneMenu>
+<p:message for="iddocumento" />    
+</div>   
+</div>   
+</div>
+
+
+<!-- Campo No. Identificacion -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Cédula usuario:" class="input-group-text" />
+</div>  
+<h:outputText value="#{usuariosSistemaController.selected.cedulausuario}" title="#{bundle.ViewUsuariosSistemaTitle_cedulausuario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- campos Primer Nombre-->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputLabel value="Primer nombre:" for="nombreusuario1" class="input-group-text" />
+</div>  
+<p:inputText id="nombreusuario1" maxlength="15" onkeypress="return sololetras(event)" value="#{usuariosSistemaController.selected.nombreusuario1}" title="#{bundle.EditUsuariosSistemaTitle_nombreusuario1}" required="true" requiredMessage="Completa el campo" class="form-control"
+validatorMessage="Minimo 3 caracteres">
+<f:validateLength minimum="3" />
+</p:inputText>
+<p:message for="nombreusuario1" />                                               
+</div>   
+</div>   
+</div>
+
+<!-- campos Segundo Nombre-->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputLabel value="Segundo nombre:" for="nombreusuario2" class="input-group-text" />
+</div>  
+<p:inputText id="nombreusuario2" maxlength="15" onkeypress="return sololetras(event)" value="#{usuariosSistemaController.selected.nombreusuario2}" title="#{bundle.EditUsuariosSistemaTitle_nombreusuario2}" class="form-control" />
+</div>   
+</div>   
+</div>
+
+<!--nombre Pimer Apellido -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputLabel value="Pimer apellido:" for="apellidousuario1" class="input-group-text"/>
+</div>  
+<p:inputText id="apellidousuario1" maxlength="15" onkeypress="return sololetras(event)" value="#{usuariosSistemaController.selected.apellidousuario1}" title="#{bundle.EditUsuariosSistemaTitle_apellidousuario1}" required="true" requiredMessage="Completa el campo" class="form-control"
+validatorMessage="Minimo 4 caracteres">
+<f:validateLength minimum="4" />
+</p:inputText>
+<p:message for="apellidousuario1" />                              
+</div>   
+</div>   
+</div>
+
+<!-- nombre Segundo Apellido -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputLabel value="Segundo apellido:" for="apellidousuario2" class="input-group-text"/>
+</div>  
+    <p:inputText id="apellidousuario2" maxlength="15" onkeypress="return sololetras(event)" value="#{usuariosSistemaController.selected.apellidousuario2}" title="#{bundle.EditUsuariosSistemaTitle_apellidousuario2}" class="form-control" />
+</div>   
+</div>   
+</div>
+</div>
+<!-- caja 2 Informacion de usuario -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Información Usuario</div>
+ 
+<!-- Tipo de usuario -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputLabel value="Tipo usuario:" for= "idusuario" class="input-group-text"/>
+</div>
+<h:selectOneMenu id="idusuario" value="#{usuariosSistemaController.selected.idusuario}" title="#{bundle.EditUsuariosSistemaTitle_idusuario}" required="true" requiredMessage="Debes seleccionar una opción" class="form-control">
+<f:selectItems value="#{tipoUsuarioController.itemsAvailableSelectOne}"/>
+</h:selectOneMenu>
+<p:message for="idusuario" />    
+</div>   
+</div>   
+</div>
+
+
+<!-- Email -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                 
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputLabel value="Email:" for="email" class="input-group-text"/>
+</div>
+<p:inputText id="email" value="#{usuariosSistemaController.selected.email}" immediate="#{emailBean.correo}" title="#{bundle.EditUsuariosSistemaTitle_email}" required="true" requiredMessage="Completa el campo" class="form-control"
+validatorMessage="Email incorrecto" >
+<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+</p:inputText>        
+<p:message for="email" />              
+</div>   
+</div>   
+</div>
+
+
+<!-- Usuario -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">  
+<h:outputLabel value="Usuario:" for="usuario" class="input-group-text"/>                    
+</div>
+<p:inputText id="usuario" value="#{usuariosSistemaController.selected.usuario}" title="#{bundle.EditUsuariosSistemaTitle_usuario}" required="true" requiredMessage="Completa el campo" class="form-control"
+validatorMessage="Minimo 5 caracteres" >
+<f:validateLength minimum="5" />
+</p:inputText>             
+<small id="passwordHelpBlock" class="form-text text-muted" >
+Contener la primera letra del primer nombre del usuario y el primer apellido del usuario. Ejemplo: Aperez    
+</small>
+<p:message for="usuario" />    
+</div>   
+</div>   
+</div>
+ 
+<!-- Contraseña -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputLabel value="Contraseña:" for="contraseña" class="input-group-text"/>                    
+</div>
+<p:inputText id="contraseña" value="#{usuariosSistemaController.selected.contraseña}" immediate="#{passwordBean.contra}" title="#{bundle.EditUsuariosSistemaTitle_contraseña}" required="true" requiredMessage="#{bundle.EditUsuariosSistemaRequiredMessage_contraseña}" class="form-control"
+validatorMessage="contraseña incorrecta" >
+<f:validateRegex pattern= "^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,10}$" />
+</p:inputText>
+<small id="passwordHelpBlock" class="form-text text-muted" >
+La contraseña debe tener al entre 8 y 10 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+Puede tener otros símbolos.
+</small>
+<p:message for="contraseña" />    
+</div>   
+</div>   
+</div>
+
+</div>
+
+
+</div>
+ 
+<!-- botones -->                   
+                    
+<div class="row cajaboton">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<p:commandButton action="#{usuariosSistemaController.update}" value="Guardar" class="btnguardar"/>    
+<p:commandButton type="reset" class="btncancelar" value="Cancelar" />
+    
+</div>
+
+    
+<div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>     
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+<p:commandButton action="#{usuariosSistemaController.prepareList}" value="Ver Lista" immediate="true" class="btnverlista"/>
+</div>
+</div>
+
+
+     
+</div>
+</h:form>                
+</div>
+ 
+</div> 
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="../resources/Bootstrap 4.1/js/bootstrap.bundle.js" ></script>
+<script src="../resources/js/contrato.js"></script>
+<script src="../resources/js/sololetras.js"></script>
+<script src="../resources/js/solonumeros.js"></script>    
+<script src="../resources/Bootstrap 4.1/js/bootstrap.min.js" ></script>   
+
+    
+</body>  
+   
+</html> 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+                   
+                   

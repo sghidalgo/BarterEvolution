@@ -1,0 +1,82 @@
+@font-face{
+    font-family: Bellerose;
+    src: url(../css/Bellerose.ttf);
+  }
+
+.container{
+    max-width: 1280px;
+    height: 100vh;
+    padding: 10px;
+}
+.cont{
+    border: 2px solid #035659;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+.text{
+    width: 100%;
+}
+hr{
+    width: 90%;
+    color: black;
+}
+.input-group-text{
+    background-color: rgba(5, 173, 191, 0.5);
+}
+.custom-select {
+    background-color: rgba(5, 173, 191, 0.5);
+}
+.botones{
+    text-align: right;
+}
+.btnguardar{
+    background: #5EB130;
+    border: none;
+    border-radius: 5%;
+    padding: 7px 10px ;
+    color: white;
+}
+.btncancelar{
+    background: #05ADBF;
+    border: none;
+    border-radius: 5%;
+    padding: 7px 10px ;
+    color: white;
+}
+.btnmodificar{
+    background: rgba(48, 63, 159, 0.8);
+    border: none;
+    border-radius: 5%;
+    padding: 7px 10px ;
+    color: white;
+}
+h6{
+    font-size: 20px;
+    font-family: Bellerose;
+    text-align: center;
+}
+.lineatitulo{
+    width: 50%;
+    background: rgba(48, 63, 159, 0.3);
+}
+
+.btn-secondary{
+    color: #fff;
+    background: #035659;
+    font-family: Bellerose;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+}
+.dropdown-menu{
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+}
+.dropdown-menu label{
+    color: #05ADBF;
+    font-family: Bellerose;
+    font-size: 20px;
+
+}
+

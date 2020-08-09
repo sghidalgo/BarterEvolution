@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+       <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+     <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/diseñorerp.css"/>
+  
+    <title>Vista Reportes</title>
+</h:head>
+<body>
+
+    <div class="container-fluid con">
+        <h:form>
+        <div class="row color">
+        <div class="col-12 titulo"><h1>Reportes</h1></div>
+      </div>
+      <div class="row justify-content-between cole">
+          <div class="col-1"></div>
+          <div  class="col-2 ">              
+              <div class="btnreporte">
+              <h:commandLink  action="Reportes/clientesVarios_Contra.xhtml" >         
+               <div class="info">                  
+                   <p class="line">Contratos</p>                     
+                </div>
+               </h:commandLink>    
+                  <p class="info2" >Requisito 1:<br> Cantidad de contratos por cliente.</br></p>
+            </div>
+ 
+          </div>
+          <div class="col-2">
+            <div class="btnreporte img1">
+               <h:commandLink  action="Reportes/Contratos_con_prorrogas.xhtml" >  
+              <div class="info">
+                      <p class="line"> Contratos</p>
+                  </div>
+                  </h:commandLink> 
+                <p class="info2" > Requisito 2: <br> Contratos con sus prorrogas.</br></p>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="btnreporte img2">
+                <h:commandLink  action="Reportes/Dias_Contrato.xhtml" >
+              <div class="info">
+                      <p class="line"> Contratos</p>
+                  </div>
+                    </h:commandLink>
+                  <p class="info2" > Requisito 3:<br> Días contratos vigentes.</br></p>
+            </div>
+          </div>
+          <div class="col-1"></div>
+      </div>
+      <div class="row justify-content-between cole">
+        <div class="col-1"></div>
+        <div class="col-2">
+          <div class="btnreporte img3">
+             <h:commandLink  action="Reportes/Cantidad_inventario.xhtml" >
+              <div class="info">
+                      <p class="line">Inventario</p>
+                  </div>
+                 </h:commandLink>
+                  <p class="info2" > Requisito 4:<br> Artículos del inventario.</br></p>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="btnreporte img4">
+              <h:commandLink  action="Reportes/Consulta_Venta.xhtml" >
+            <div class="info">
+                      <p class="line">Ventas</p>
+                  </div>
+                  </h:commandLink>
+                  <p class="info2" > Requisito 5: <br> Facturas de venta.</br></p>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="btnreporte img5">
+             <h:commandLink  action="Reportes/clientes_con_usuario.xhtml" > 
+            <div class="info">
+                      <p class="line">Usuarios Sistema</p>
+                  </div>
+                 </h:commandLink>
+                  <p class="info2" > Requisito 6: <br> Clientes como usuarios del sistema.</br></p>
+          </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+     </h:form>       
+      </div>
+      
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" ></script>
+
+
+</body>
+</html>   
+

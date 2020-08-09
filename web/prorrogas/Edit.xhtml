@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditProrrogasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditProrrogasLabel_noprorroga}" for="noprorroga" />
+                    <h:inputText id="noprorroga" value="#{prorrogasController.selected.noprorroga}" title="#{bundle.EditProrrogasTitle_noprorroga}" required="true" requiredMessage="#{bundle.EditProrrogasRequiredMessage_noprorroga}"/>
+                    <h:outputLabel value="#{bundle.EditProrrogasLabel_fechainicioprorroga}" for="fechainicioprorroga" />
+                    <h:inputText id="fechainicioprorroga" value="#{prorrogasController.selected.fechainicioprorroga}" title="#{bundle.EditProrrogasTitle_fechainicioprorroga}" required="true" requiredMessage="#{bundle.EditProrrogasRequiredMessage_fechainicioprorroga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditProrrogasLabel_fechavencimientoprorroga}" for="fechavencimientoprorroga" />
+                    <h:inputText id="fechavencimientoprorroga" value="#{prorrogasController.selected.fechavencimientoprorroga}" title="#{bundle.EditProrrogasTitle_fechavencimientoprorroga}" required="true" requiredMessage="#{bundle.EditProrrogasRequiredMessage_fechavencimientoprorroga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditProrrogasLabel_mesesapagar}" for="mesesapagar" />
+                    <h:inputText id="mesesapagar" value="#{prorrogasController.selected.mesesapagar}" title="#{bundle.EditProrrogasTitle_mesesapagar}" required="true" requiredMessage="#{bundle.EditProrrogasRequiredMessage_mesesapagar}"/>
+                    <h:outputLabel value="#{bundle.EditProrrogasLabel_valormes}" for="valormes" />
+                    <h:inputText id="valormes" value="#{prorrogasController.selected.valormes}" title="#{bundle.EditProrrogasTitle_valormes}" required="true" requiredMessage="#{bundle.EditProrrogasRequiredMessage_valormes}"/>
+                    <h:outputLabel value="#{bundle.EditProrrogasLabel_diasvencidos}" for="diasvencidos" />
+                    <h:inputText id="diasvencidos" value="#{prorrogasController.selected.diasvencidos}" title="#{bundle.EditProrrogasTitle_diasvencidos}" required="true" requiredMessage="#{bundle.EditProrrogasRequiredMessage_diasvencidos}"/>
+                    <h:outputLabel value="#{bundle.EditProrrogasLabel_nocontrato}" for="nocontrato" />
+                    <h:selectOneMenu id="nocontrato" value="#{prorrogasController.selected.nocontrato}" title="#{bundle.EditProrrogasTitle_nocontrato}" required="true" requiredMessage="#{bundle.EditProrrogasRequiredMessage_nocontrato}">
+                        <f:selectItems value="#{contratosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{prorrogasController.update}" value="#{bundle.EditProrrogasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditProrrogasViewLink}"/>
+                <br />
+                <h:commandLink action="#{prorrogasController.prepareList}" value="#{bundle.EditProrrogasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditProrrogasIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

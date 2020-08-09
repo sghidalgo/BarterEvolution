@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/css/animate.min.css"/>
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/cssmodcontrato.css"/>
+   <title>Consultar Venta</title>
+   </head>
+
+
+<body>
+
+<div class=" container">
+<div class="row justify-content-center">
+<div class="col-12 cont">
+<div class="row">       
+
+     
+<!-- Titulo Formulario -->    
+
+<div class="col-11">
+<h6 class="animated bounceInLeft" >CONSULTAR VENTA</h6>
+<hr class="lineatitulo"></hr>
+</div>
+</div>    
+    
+   
+<h:form class="needs-validation">  
+<div class="row">
+<h:panelGroup id="messagePanel" layout="block">
+ <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+</h:panelGroup>
+
+<!-- Caja 1 titulo informacion general --> 
+<div class="form-row justify-content-center" >
+<div class="cajaform row">
+<div class="col-12 tit">Información general</div>    
+
+<!-- Campo Fecha factura -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Fecha factura:" class="input-group-text" />
+</div>  
+<h:outputText value="#{ventasController.selected.fechafactura}" title="#{bundle.ViewVentasTitle_fechafactura}" class="form-control">
+<f:convertDateTime pattern="MM/dd/yyyy" />
+</h:outputText>
+</div>   
+</div>   
+</div>
+    
+<!-- Campo No. factura -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="No. factura:" class="input-group-text" />
+</div>  
+<h:outputText value="#{ventasController.selected.nofactura}" title="#{bundle.ViewVentasTitle_nofactura}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- Campo cedula cliente -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Cédula cliente:" class="input-group-text" />
+</div>  
+<h:outputText value="#{ventasController.selected.cedulacliente}" title="#{bundle.ViewVentasTitle_cedulacliente}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- Campo cedula usuario -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Cédula usuario:" class="input-group-text" />
+</div>  
+<h:outputText value="#{ventasController.selected.cedulausuario}" title="#{bundle.ViewVentasTitle_cedulausuario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+</div>
+    
+    
+<!-- caja 2 titulo informacion articulo -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Información artículo</div>
+
+<!-- campo id articulo  -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="No. artículo:"  class="input-group-text" />
+</div>
+<h:outputText value="#{ventasController.selected.idarticulo}" title="#{bundle.ViewVentasTitle_idarticulo}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+<!-- campo estado articulo  -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Estado del artículo:" class="input-group-text" />
+</div>
+<h:outputText value="#{ventasController.selected.idestadoarticulo}" title="#{bundle.ViewVentasTitle_idestadoarticulo}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+    
+</div>
+    
+
+<!-- caja 3 titulo valores -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Valores</div>
+
+<!-- campo precio unitario  -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Precio unitario: " class="input-group-text" />
+</div>
+<h:outputText value="#{ventasController.selected.preciounitario}" title="#{bundle.ViewVentasTitle_preciounitario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- cantidad  -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Cantidad:"  class="input-group-text" />
+</div>
+<h:outputText value="#{ventasController.selected.cantidad}" title="#{bundle.ViewVentasTitle_cantidad}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- Subtotal  -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Subtotal:" class="input-group-text" />
+</div>
+<h:outputText value="#{ventasController.selected.subTotal}" title="#{bundle.ViewVentasTitle_subTotal}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- IVA  -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="IVA: " class="input-group-text" />
+</div>
+<h:outputText value="#{ventasController.selected.iva}" title="#{bundle.ViewVentasTitle_iva}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+
+<!-- Valor total -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Valor total: " class="input-group-text" />
+</div>
+<h:outputText value="#{ventasController.selected.valorTotal}" title="#{bundle.ViewVentasTitle_valorTotal}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+ 
+</div>
+
+
+</div>
+
+<!-- botones -->                   
+                    
+<div class="row cajaboton">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<h:commandButton action="#{ventasController.prepareCreate}" value="Generar Venta" class="btnregistrarform" />     
+   
+</div>
+
+    
+<div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>     
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+<h:commandButton action="#{ventasController.prepareList}" value="Ver Lista" class="btnverlistah"/>    
+</div>
+</div>
+
+    
+</div>
+</h:form>                
+</div>
+ 
+</div> 
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="../resources/Bootstrap 4.1/js/bootstrap.bundle.js" ></script>
+<script src="../resources/js/contrato.js"></script>
+<script src="../resources/js/sololetras.js"></script>
+<script src="../resources/js/solonumeros.js"></script>    
+<script src="../resources/Bootstrap 4.1/js/bootstrap.min.js" ></script>
+    
+</body>  
+   
+</html>
+
+
+
+
+
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEstadoArticulosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEstadoArticulosLabel_idestadoarticulo}" for="idestadoarticulo" />
+                    <h:inputText id="idestadoarticulo" value="#{estadoArticulosController.selected.idestadoarticulo}" title="#{bundle.EditEstadoArticulosTitle_idestadoarticulo}" required="true" requiredMessage="#{bundle.EditEstadoArticulosRequiredMessage_idestadoarticulo}"/>
+                    <h:outputLabel value="#{bundle.EditEstadoArticulosLabel_nombreestadoart}" for="nombreestadoart" />
+                    <h:inputText id="nombreestadoart" value="#{estadoArticulosController.selected.nombreestadoart}" title="#{bundle.EditEstadoArticulosTitle_nombreestadoart}" required="true" requiredMessage="#{bundle.EditEstadoArticulosRequiredMessage_nombreestadoart}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{estadoArticulosController.update}" value="#{bundle.EditEstadoArticulosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEstadoArticulosViewLink}"/>
+                <br />
+                <h:commandLink action="#{estadoArticulosController.prepareList}" value="#{bundle.EditEstadoArticulosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEstadoArticulosIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

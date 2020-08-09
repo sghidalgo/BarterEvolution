@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Reportes Usuarios</title>
+
+    <link href="../resources/css/tablareportes.css" rel="stylesheet" type="text/css"/>
+    <link href="../resources/Bootstrap 4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </h:head>
+
+    <h:body class="colorRepor">
+        
+
+        <h:form class="pad">
+            <br> 
+                         <div class="row">
+                 <div class="col-4 logo" ></div>        
+                 
+                 
+                 <div class="col-4 titul" > <h2 class="colort2">Reporte<span class="colort2">Usuarios</span>  </h2>   </div> 
+                 <div class="col-1 logo" ></div> 
+                 <div class="col-2 logo" ></div>                  
+             </div>
+            <div class="row ">
+        <div class="col-lg-8 col-md-3 col-sm-none col-xs-none">
+        <div class="col-12" ><p>Requisito 6: El sistema permitirá consultar los clientes que se encuentran como usuarios del sistema y la cantidad de contratos registrados</p></div>    
+        </div>    
+
+        <div class="col-lg-4 col-md-9 col-sm-12 col-xs-12"> 
+        <h:commandButton class="btnexportar" value="Exportar a excel" >                    
+        <p:dataExporter type="xls" target="datalist" fileName="ExcelusuariosSistemaRq6" />    
+        </h:commandButton>               
+        <h:commandButton class="btnexportar1" value="Exportar a pdf" >                
+        <p:dataExporter type="pdf" target="datalist" fileName="PdfusuariosSistemaRq6" />    
+        </h:commandButton>                     
+        </div>
+        </div>            
+  
+                <br>
+            
+                    <p:dataTable id="datalist" var="fila" value="#{clientesconUsuario.listar}" reflow="true" rows="10" paginator="true">
+                                
+                <p:column headerText="Cedula" class="ancho" >
+                     <h:outputText value="#{fila[0]}" />
+                </p:column>
+ 
+                <p:column headerText="Nombres" class="ancho">
+                     <h:outputText value="#{fila[1]}" >
+                     </h:outputText>
+                </p:column>
+                
+                <p:column headerText="Email" class="ancho">
+                     <h:outputText value="#{fila[2]}" >
+                     </h:outputText>
+                </p:column>
+               
+                 <p:column headerText="Usuario" class="ancho">
+                     <h:outputText value="#{fila[3]}" >
+                     </h:outputText>
+                </p:column>
+                
+                 <p:column headerText="Tipo Usuario" class="ancho">
+                     <h:outputText value="#{fila[4]}" >
+                     </h:outputText>
+                </p:column>
+                
+                 <p:column headerText="Cantidad Contratos" class="ancho">
+                     <h:outputText value="#{fila[5]}" >
+                     </h:outputText>
+                </p:column>            
+                                 
+                 
+            </p:dataTable>
+        </br>       
+   </br>
+            
+        </h:form>
+        
+        <script src="../../../../Documents/NetBeansProjects/proyectoylogin/web/resources/js/bootstrap.min.js" type="text/javascript"></script>
+    </h:body>
+</html>

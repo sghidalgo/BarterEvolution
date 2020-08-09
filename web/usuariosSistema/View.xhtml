@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/css/animate.min.css"/>
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/cssmodcontrato.css"/>
+   <title>Consultar usuario</title>
+   </head>
+
+    
+<body>
+
+
+<div class=" container">
+<div class="row justify-content-center">
+<div class="col-12 cont">
+<div class="row">       
+
+   
+    
+<!-- Titulo Formulario -->    
+
+<div class="col-11">
+<h6 class="animated bounceInLeft" >CONSULTAR USUARIO SISTEMA</h6>
+<hr class="lineatitulo"></hr>
+</div>
+</div>
+    
+
+    
+<h:form class="needs-validation">  
+<div class="row">
+<h:panelGroup id="messagePanel" layout="block">
+ <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+</h:panelGroup>
+
+    
+    
+
+<!-- Caja 1 titulo informacion articulo --> 
+<div class="form-row justify-content-center" >
+<div class="cajaform row">
+<div class="col-12 tit">Información Personal</div>    
+
+<!-- campo tipo de documento -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Tipo de documento:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{usuariosSistemaController.selected.iddocumento}" title="#{bundle.ViewUsuariosSistemaTitle_iddocumento}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+
+<!-- Campo No. Identificacion -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Cédula usuario:" class="input-group-text" />
+</div>  
+<h:outputText value="#{usuariosSistemaController.selected.cedulausuario}" title="#{bundle.ViewUsuariosSistemaTitle_cedulausuario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- campos Primer Nombre-->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Primer nombre:" class="input-group-text" />
+</div>  
+<h:outputText value="#{usuariosSistemaController.selected.nombreusuario1}" title="#{bundle.ViewUsuariosSistemaTitle_nombreusuario1}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- campos Segundo Nombre-->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Segundo nombre:" class="input-group-text" />
+</div>  
+ <h:outputText value="#{usuariosSistemaController.selected.nombreusuario2}" title="#{bundle.ViewUsuariosSistemaTitle_nombreusuario2}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!--nombre Pimer Apellido -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Pimer apellido:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{usuariosSistemaController.selected.apellidousuario1}" title="#{bundle.ViewUsuariosSistemaTitle_apellidousuario1}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- nombre Segundo Apellido -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Segundo apellido:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{usuariosSistemaController.selected.apellidousuario2}" title="#{bundle.ViewUsuariosSistemaTitle_apellidousuario2}" class="form-control"/>
+</div>   
+</div>   
+</div>
+</div>
+<!-- caja 2 Informacion de usuario -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Información Usuario</div>
+ 
+<!-- Tipo de usuario -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Tipo usuario:" class="input-group-text"/>
+</div>
+<h:outputText value="#{usuariosSistemaController.selected.idusuario}" title="#{bundle.ViewUsuariosSistemaTitle_idusuario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+
+<!-- Email -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                 
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Email:" class="input-group-text"/>
+</div>
+<h:outputText value="#{usuariosSistemaController.selected.email}" title="#{bundle.ViewUsuariosSistemaTitle_email}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+
+<!-- Usuario -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">  
+<h:outputText value="Usuario:" class="input-group-text"/>                    
+</div>
+<h:outputText value="#{usuariosSistemaController.selected.usuario}" title="#{bundle.ViewUsuariosSistemaTitle_usuario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+ 
+<!-- Contraseña -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Contraseña:" class="input-group-text"/>                    
+</div>
+<h:outputText value="#{usuariosSistemaController.selected.contraseña}" title="#{bundle.ViewUsuariosSistemaTitle_contraseña}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+</div>
+
+
+</div>
+    
+<!-- botones -->                   
+                    
+<div class="row cajaboton">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<h:commandButton action="modificarusu" value="Modificar" class="btneditarform"/>
+<h:commandButton action="#{usuariosSistemaController.prepareCreate}" value="Registrar Usuario" class="btnregistrarform" />
+</div>
+
+    
+<div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>     
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+<h:commandButton action="#{usuariosSistemaController.destroyAndView}" value="Eliminar" class="btneliminar"/>    
+<h:commandButton action="#{usuariosSistemaController.prepareList}" value="Ver Lista" class="btnverlistah"/>
+        
+</div>
+</div>
+
+    
+</div>
+</h:form>                
+</div>
+ 
+</div> 
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="../resources/Bootstrap 4.1/js/bootstrap.bundle.js" ></script>
+<script src="../resources/js/contrato.js"></script>
+<script src="../resources/js/sololetras.js"></script>
+<script src="../resources/js/solonumeros.js"></script>    
+<script src="../resources/Bootstrap 4.1/js/bootstrap.min.js" ></script>
+    
+</body>  
+   
+</html>    
+    
+    
+    
+    
+    
+    
+    
+             
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                

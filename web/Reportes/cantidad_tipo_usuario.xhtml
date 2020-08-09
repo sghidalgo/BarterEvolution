@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Reportes Usuario</title>
+
+    <link href="../resources/css/tablareportes.css" rel="stylesheet" type="text/css"/>
+    <link href="../resources/Bootstrap 4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body class="colorRepor">
+        
+
+        <h:form class="pad">
+                         <div class="row">
+                 <div class="col-4 logo" ></div> 
+               
+                 <div class="col-1 logo" >  <img src="../resources/img/HORIZONTAL_LOGO-removebg-preview.png" width="60" height="60" alt=""/></div> 
+                 
+                 <div class="col-4 titul" > <h2 class="colort">Reportes <span class="colort2">   Usuarios </span>  </h2>   </div> 
+                 <div class="col-1 logo" ></div> 
+                 <div class="col-2 logo" ></div> 
+                 <div class="col-12" ><p>Loremj khsdfsdfkjhodsjols i sdjf fj dpfsdj jdfpsf jdpdfjpfsdjpdsfjpsdfo pdfsd  kfsdpkdfk pdskp ghsdfhi lfhasdfij fdijsd ifjasdjcp dijf iaasdjp </p> </div> 
+             </div> 
+            <p:dataTable var="fila" value="#{cantidadTipoUsuarioBean.listado}" reflow="true" rows="5" paginator="true">
+                                
+                <p:column headerText="Rol" class="ancho" >
+                     <h:outputText value="#{fila[0]}" />
+                </p:column>
+ 
+                <p:column headerText="Cantidad" class="ancho">
+                     <h:outputText value="#{fila[1]}" >
+                     </h:outputText>
+                </p:column>  
+            </p:dataTable>
+        </h:form>
+        
+        <script src="../../../../Documents/NetBeansProjects/proyectoylogin/web/resources/js/bootstrap.min.js" type="text/javascript"></script>
+    </h:body>
+</html>

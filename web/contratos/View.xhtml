@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/css/animate.min.css"/>
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/cssmodcontrato.css"/>
+   <title>Consultar Contrato</title>
+   </head>
+
+
+<body>
+
+<div class=" container">
+<div class="row justify-content-center">
+<div class="col-12 cont">
+<div class="row">       
+
+     
+<!-- Titulo Formulario -->    
+
+<div class="col-11">
+<h6 class="animated bounceInLeft" >CONSULTAR CONTRATO</h6>
+<hr class="lineatitulo"></hr> 
+</div>
+</div>    
+    
+   
+<h:form class="needs-validation">  
+<div class="row">
+<h:panelGroup id="messagePanel" layout="block">
+ <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+</h:panelGroup>
+
+<!-- Caja 1 titulo informacion contrato --> 
+<div class="form-row justify-content-center" >
+<div class="cajaform row">
+<div class="col-12 tit">Información contrato</div>    
+
+<!-- Campo No contrato -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="No. contrato:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{contratosController.selected.nocontrato}" title="#{bundle.ViewContratosTitle_nocontrato}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+<!-- Campo condicion -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Condición contrato:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{contratosController.selected.idcondicioncontrato}" title="#{bundle.ViewContratosTitle_idcondicioncontrato}" class="form-control"/>
+</div>   
+</div>   
+</div>    
+
+<!-- Campo cedula cliente -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Cédula cliente:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{contratosController.selected.cedulacliente}" title="#{bundle.ViewContratosTitle_cedulacliente}" class="form-control"/>
+</div>   
+</div>   
+</div>    
+
+<!-- campo cedula usuario -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Cédula usuario:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{contratosController.selected.cedulausuario}" title="#{bundle.ViewContratosTitle_cedulausuario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+</div>
+    
+<!-- caja 2 titulo informacion complementaria -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Información complementaria</div>
+
+<!-- No. articulo -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="No. artículo:" class="input-group-text"/>
+</div>
+<h:outputText value="#{contratosController.selected.idarticulo}" title="#{bundle.ViewContratosTitle_idarticulo}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+<!-- No. prorroga -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="No. prórroga:" class="input-group-text"/>    
+</div>
+<h:outputText value="#{contratosController.selected.noprorroga}" title="#{bundle.ViewContratosTitle_noprorroga}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- plazo estipulado -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Plazo estipulado:" class="input-group-text" />
+</div>
+<h:outputText value="#{contratosController.selected.plazoestipulado}" title="#{bundle.ViewContratosTitle_plazoestipulado}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- campo valor contrato -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Valor contrato:" class="input-group-text" />
+</div>  
+<h:outputText value="#{contratosController.selected.valorcontrato}" title="#{bundle.ViewContratosTitle_valorcontrato}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+</div>
+
+<!-- caja 3 titulo fechas contrato -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Fechas contrato</div>
+
+<!-- fecha inicio -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Fecha inicio:" class="input-group-text" />
+</div>
+<h:outputText value="#{contratosController.selected.fechainicio}" title="#{bundle.ViewContratosTitle_fechainicio}" class="form-control">
+<f:convertDateTime pattern="MM/dd/yyyy" />
+</h:outputText>
+</div>   
+</div>   
+</div>
+
+<!-- fecha vencimiento -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Fecha vencimiento:" class="input-group-text" />
+</div>
+<h:outputText value="#{contratosController.selected.fechavencimiento}" title="#{bundle.ViewContratosTitle_fechavencimiento}" class="form-control">
+<f:convertDateTime pattern="MM/dd/yyyy" />
+</h:outputText>
+</div>   
+</div>   
+</div>
+
+<!-- fecha pago -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Fecha pago:" class="input-group-text" />
+</div>
+<h:outputText value="#{contratosController.selected.fechapago}" title="#{bundle.ViewContratosTitle_fechapago}" class="form-control">
+<f:convertDateTime pattern="MM/dd/yyyy" />
+</h:outputText>
+</div>   
+</div>   
+</div>
+
+ 
+</div>
+
+
+</div>
+
+<!-- botones -->                   
+                    
+<div class="row cajaboton">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">    
+<h:commandButton action="actuacontra" value="Actualizar" class="btnactualizar"/>
+<h:commandButton action="#{contratosController.prepareCreate}" value="Generar Contrato" class="btnregistrarform" />
+    
+</div>
+
+    
+<div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>     
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+<h:commandButton action="#{contratosController.prepareList}" value="Ver Lista" class="btnverlistah"/>    
+</div>
+</div>
+
+
+     
+</div>
+</h:form>                
+</div>
+ 
+</div> 
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="../resources/Bootstrap 4.1/js/bootstrap.bundle.js" ></script>
+<script src="../resources/js/contrato.js"></script>
+<script src="../resources/js/sololetras.js"></script>
+<script src="../resources/js/solonumeros.js"></script>    
+<script src="../resources/Bootstrap 4.1/js/bootstrap.min.js" ></script>
+    
+</body>  
+   
+</html>
+
+ 
+                    
+                    
+                    
+                    
+                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    

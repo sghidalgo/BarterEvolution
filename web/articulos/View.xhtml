@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/css/animate.min.css"/>
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/cssmodcontrato.css"/>   
+   <title>Consultar Articulo</title>
+   </h:head>
+
+
+<body>
+
+<div class=" container">
+<div class="row justify-content-center">
+<div class="col-12 cont">
+<div class="row">       
+  
+    
+<!-- Titulo Formulario -->    
+
+<div class="col-11">
+<h6 class="animated bounceInLeft" >CONSULTAR ARTÍCULO</h6>
+<hr class="lineatitulo"></hr>
+</div>
+</div>
+          
+    
+<h:form class="needs-validation">  
+<div class="row">
+<h:panelGroup id="messagePanel" layout="block">
+ <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+</h:panelGroup>
+
+    
+  
+
+<!-- Caja 1 titulo informacion articulo --> 
+<div class="form-row justify-content-center" >
+<div class="cajaform row">
+<div class="col-12 tit">Información artículo</div>    
+    
+<!-- Campo id articulo -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="No. artículo:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{articulosController.selected.idArticulo}" title="#{bundle.ViewArticulosTitle_idArticulo}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+<!-- campo categoria -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Categoria:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{articulosController.selected.idcategoria}" title="#{bundle.ViewArticulosTitle_idcategoria}" class="form-control"/>                                            
+</div>   
+</div>   
+</div>
+    
+
+<!-- campos estado articulo -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Estado del artículo:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{articulosController.selected.idestadoarticulo}" title="#{bundle.ViewArticulosTitle_idestadoarticulo}" class="form-control"/>                        
+</div>   
+</div>   
+</div>
+    
+   
+<!--nombre articulo -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Nombre:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{articulosController.selected.nombrearticulo}" title="#{bundle.ViewArticulosTitle_nombrearticulo}" class="form-control"/>
+
+</div>   
+</div>   
+</div>
+    
+<!-- descripcion -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Descripción:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{articulosController.selected.descripcion}" title="#{bundle.ViewArticulosTitle_descripcion}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+</div>    
+    
+<!-- caja 2 titulo datos complementarios -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Datos complementarios</div>
+
+<!-- serie -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Serie" class="input-group-text"/>                    
+</div>
+<h:outputText value="#{articulosController.selected.serie}" title="#{bundle.ViewArticulosTitle_serie}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+<!-- modelo -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Modelo:" class="input-group-text"/>
+</div>
+<h:outputText value="#{articulosController.selected.modelo}" title="#{bundle.ViewArticulosTitle_modelo}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- marca -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Marca:" class="input-group-text"/>
+</div>
+<h:outputText value="#{articulosController.selected.marca}" title="#{bundle.ViewArticulosTitle_marca}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- precio unitario -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Precio unitario:" class="input-group-text"/>
+</div>
+<h:outputText value="#{articulosController.selected.preciounitario}" title="#{bundle.ViewArticulosTitle_preciounitario}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+    
+<!-- Genero -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Genero:" class="input-group-text"/>
+</div>
+<h:outputText value="#{articulosController.selected.genero}" title="#{bundle.ViewArticulosTitle_genero}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+ 
+</div>
+
+
+</div>
+    
+    
+<!-- botones -->                   
+                    
+<div class="row cajaboton">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">    
+<h:commandButton action="modificarart" value="Modificar" class="btneditarform"/>
+<h:commandButton action="#{articulosController.prepareCreate}" value="Registrar Artículo" class="btnregistrarform" />
+</div>
+
+    
+<div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>     
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">      
+<h:commandButton action="#{articulosController.prepareList}" value="Ver Lista" class="btnverlistah"/>
+</div>
+</div>
+
+
+     
+</div>
+</h:form>                
+</div>
+ 
+</div> 
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="../resources/Bootstrap 4.1/js/bootstrap.bundle.js" ></script>
+<script src="../resources/js/contrato.js"></script>
+<script src="../resources/js/sololetras.js"></script>
+<script src="../resources/js/solonumeros.js"></script>    
+<script src="../resources/Bootstrap 4.1/js/bootstrap.min.js" ></script>
+    
+</body>  
+   
+</html>
+                                        
+           

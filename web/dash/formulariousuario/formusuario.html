@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/animate.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="css/form-usuario.css">
+    <title>Formulario_UsuarioSistema</title>
+
+</head>
+<body>
+<header>
+
+<div class=" container">
+<form class="form-row justify-content-center">
+<div class="col-12 cont">
+<div class="row">
+<div class="consultar col-1">
+<div class="dropdown dropright">
+<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Consultar
+</a>  
+
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+<form class="dropdown-menu p-4">
+<div class="form-group">
+<label for="cedulausuario">Cédula</label>
+<input type="text" required minlength="5" maxlength="11" class="form-control" id="cedulausuario" placeholder="Número documento">
+</div>
+<button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+</div>
+</div>
+</div>
+<div class="col-11">
+<h6 class="animated bounceInLeft" >REGISTRAR USUARIOS</h6>
+<hr class="lineatitulo">
+                        
+</div>
+</div>
+
+<form class="needs-validation" novalidate>                  
+<div class="row">
+<div class=" col-12">
+
+<!--Campos formulario cedula usuario--> 
+
+<form class="form-row">
+<label class="sr-only" for="numerodocumento"></label> 
+<div class="input-group mb-3 mr-sm-2">
+<div class="input-group-prepend">
+<div  class="input-group-text">Cédula Usuario:
+</div>
+<input type="text" required minlength="5" maxlength="11" onkeypress="return solonumeros(event)"
+class="form-control" placeholder="Número documento" required>
+<div class="valid-feedback">¡Ok, valido!</div>
+<div class="invalid-feedback">Completa el campo (Valor mínimo requerido de 5 dígitos)</div> 
+</div>
+</div>
+</div>
+
+<!--Campos formulario id documento y tipo documento--> 
+<form>
+<div class="col-6">
+<div class="form-group">
+<div class="input-group mb-2 mr-sm-2">
+<div class="form-row align-items-center">
+<div class="col-auto my-0">
+<label class="mr-sm-2 sr-only" for="inlineFormCustomSelect" >Preference</label>
+<select class="custom-select mr-sm-0" id="opcionestipodoc" onchange="cambioOpcionestipdoc();" id="inlineFormCustomSelect" >
+   <option value="NN">Id Documento</option>
+   <option value="CC">CC</option>
+   <option value="CE">CE</option>               
+</select>
+</div>
+</div>              
+<input type="text" id='idtdocumento' id='ciudadania' id='extranjeria' class="form-control" required minlength="6" maxlength="21" 
+ placeholder="Tipo documento" required>
+ <div class="valid-feedback">¡Ok, valido!</div>
+<div class="invalid-feedback">Completa el campo (Selecciona el Id correspondiente)</div> 
+</div>
+</div>  
+</div>
+</form>  
+
+<!--Campos formulario id usuario y tipo usuario--> 
+                            
+<div class="col-6">
+<div class="form-group">
+<div class="input-group mb-2 mr-sm-4">
+<div class="form-row align-items-center">
+<div class="col-auto my-0">
+<label class="mr-sm-2 sr-only" for="inlineFormCustomSelect" >Preference</label>
+<select class="custom-select mr-sm-2" id="opcionestipous" onchange="cambioOpcionestipus();" id="inlineFormCustomSelect">
+<option value="NN">Id Tipo Usuario</option>
+<option value="A">A</option>
+<option value="E">E</option>
+<option value="C">C</option>
+</select>
+</div>
+</div>              
+<input type="text" id='idtusuario' id='administrador' id='empleado' id='cliente' class="form-control" required minlength="7" maxlength="15" 
+onkeypress="return sololetras(event)" placeholder="Tipo usuario" required>
+<div class="valid-feedback">¡Ok, valido!</div>
+<div class="invalid-feedback">Completa el campo (Selecciona el Id correspondiente)</div> 
+</div>
+</div>
+</div> 
+
+<!--Campos Nombres usuario--> 
+
+<div class="col-6">                   
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">NombreUsuario1:</span>
+</div>  
+<input type="text" class="form-control" placeholder="Primer Nombre" required minlength="2" maxlength="15" 
+onkeypress="return sololetras(event)" required> 
+<div class="valid-feedback">¡Ok, valido!</div>
+<div class="invalid-feedback">Completa el campo (Texto mínimo requerido de 2 letras)</div> 
+</div>   
+</div>   
+</div>
+
+<div class="col-6">
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">NombreUsuario2:</span>
+</div>  
+<input type="text" class="form-control" placeholder="Segundo Nombre" minlength="2" maxlength="15" 
+onkeypress="return sololetras(event)">
+<div class="invalid-feedback">Completa el campo (Texto mínimo requerido de 2 letras)</div>
+</div>   
+</div>
+</div>
+
+<!--Campos Apellidos usuario-->
+               
+<div class="col-6">                     
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">ApellidoUsuario1:</span>
+</div>  
+<input type="text" class="form-control" placeholder="Primer Apellido" required minlength="2" maxlength="15"
+onkeypress="return sololetras(event)" required>
+<div class="valid-feedback">¡Ok, valido!</div> 
+<div class="invalid-feedback">Completa el campo (Texto mínimo requerido de 2 letras)</div>
+</div>   
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">ApellidoUsuario2:</span>
+</div>  
+<input type="text" class="form-control" placeholder="Segundo Apellido" minlength="2" maxlength="15"
+onkeypress="return sololetras(event)">
+<div class="invalid-feedback">Completa el campo (Texto mínimo requerido de 2 letras)</div>
+</div>   
+</div> 
+</div> 
+              
+<!--Campos usuario y contraseña-->            
+
+<hr>
+<div class="col-6">
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">Usuario:</span>
+</div>  
+<input  type="text" required minlength="5" maxlength="15" required pattern="[A-Za-Z0-9]+" id="inputPassword5" class="form-control"
+aria-describedby="passwordHelpBlock" placeholder="Username" required>
+<small id="passwordHelpBlock" class="form-text text-muted" >
+ Debe contener la primera letra del primer nombre del usuario y el primer apellido del usuario. Ejemplo: Aperez    
+</small>
+<div class="valid-feedback">¡Ok, valido!</div> 
+<div class="invalid-feedback">Completa el campo</div>
+</div>   
+</div>   
+</div>
+
+<div class="col-6">
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<span class="input-group-text">Contraseña:</span>
+</div>  
+<input type="password" required minlength="8" maxlength="10" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Contraseña">
+<small id="passwordHelpBlock" class="form-text text-muted" required>
+Su contraseña debe tener entre 8 y 10 caracteres, contener letras y números, no debe contener espacios o caracteres especiales.   
+</small>
+<div class="valid-feedback">¡Ok, valido!</div> 
+<div class="invalid-feedback">Completa el campo</div>
+</div>   
+</div> 
+</div>
+
+</form>
+                
+                
+<!--Botones-->
+
+<div class="col-6">
+<button class="btnmodificar"class="btn-primary">Modificar</button>
+</div>
+<div class="col-6 botones">
+    
+<button type="submit" class="btnguardar" class="btn btn-success" onclick='Notificacion()'>Guardar</button> 
+<button type="reset" class="btncancelar" class=" btn-primary">Cancelar</button>
+</div>
+
+</form>
+              
+                 
+              
+  
+           
+             
+              
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" ></script>
+<script src="js/indexfor.js"></script>
+<script src="js/sololetras.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/opcionestipodoc.js"></script>
+<script src="js/opcionestipous.js"></script>
+<script src="js/botonguardar.js"></script>
+
+</header> 
+</body>
+</html>   
+</header>              
+
+ 
+           
+
+           
+              
+           
+             
+       
+      
+
+
+    

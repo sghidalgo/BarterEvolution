@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/css/animate.min.css"/>
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/cssmodcontrato.css"/>
+   <title>Consultar Prorroga</title>
+   </head>
+
+<body>
+
+<div class=" container">
+<div class="row justify-content-center">
+<div class="col-12 cont">
+<div class="row">       
+
+     
+<!-- Titulo Formulario -->    
+
+<div class="col-11">
+<h6 class="animated bounceInLeft" >CONSULTAR PRORROGA</h6>
+<hr class="lineatitulo"></hr>
+</div>
+</div>    
+    
+   
+<h:form class="needs-validation">  
+<div class="row">
+<h:panelGroup id="messagePanel" layout="block">
+ <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+</h:panelGroup>
+
+<!-- Caja 1 titulo informacion prorroga --> 
+<div class="form-row justify-content-center" >
+<div class="cajaform row">
+<div class="col-12 tit">Información prórroga</div>    
+
+<!-- Campo No prorroga -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="No. prórroga:" class="input-group-text"/>
+</div>  
+<h:outputText value="#{prorrogasController.selected.noprorroga}" title="#{bundle.ViewProrrogasTitle_noprorroga}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+<!-- Campo No contrato -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="No. contrato:" class="input-group-text" />
+</div>  
+<h:outputText value="#{prorrogasController.selected.nocontrato}" title="#{bundle.ViewProrrogasTitle_nocontrato}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+<!-- Campo valor prorroga -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Valor prórroga:" class="input-group-text" />
+</div>  
+<h:outputText value="#{prorrogasController.selected.valormes}" title="#{bundle.ViewProrrogasTitle_valormes}" class="form-control"/>
+</div>   
+</div>   
+</div>    
+
+<!-- Campo meses a pagar -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Meses a pagar:" class="input-group-text" />
+</div>  
+<h:outputText value="#{prorrogasController.selected.mesesapagar}" title="#{bundle.ViewProrrogasTitle_mesesapagar}" class="form-control"/>
+</div>   
+</div>   
+</div>    
+
+<!-- campo dias vencidos -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Días vencidos:" class="input-group-text" />
+</div>  
+<h:outputText value="#{prorrogasController.selected.diasvencidos}" title="#{bundle.ViewProrrogasTitle_diasvencidos}" class="form-control"/>
+</div>   
+</div>   
+</div>
+
+</div>
+
+<!-- caja 2 titulo fechas prorroga -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Fechas prórroga</div>
+
+<!-- Fecha inicio  -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Fecha inicio:" class="input-group-text" />
+</div>
+<h:outputText value="#{prorrogasController.selected.fechainicioprorroga}" title="#{bundle.ViewProrrogasTitle_fechainicioprorroga}" class="form-control">
+<f:convertDateTime pattern="MM/dd/yyyy" />
+</h:outputText>
+</div>   
+</div>   
+</div>
+    
+<!-- fecha vencimiento -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Fecha vencimiento:" class="input-group-text" />
+</div>
+<h:outputText value="#{prorrogasController.selected.fechavencimientoprorroga}" title="#{bundle.ViewProrrogasTitle_fechavencimientoprorroga}" class="form-control">
+<f:convertDateTime pattern="MM/dd/yyyy" />
+</h:outputText>                    
+</div>   
+</div>   
+</div>
+
+ 
+</div>
+
+
+</div>
+
+<!-- botones -->                   
+                    
+<div class="row cajaboton">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<h:commandButton action="#{prorrogasController.prepareCreate}" value="Generar Prórroga" class="btnregistrarform" /> 
+   
+</div>
+
+    
+<div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>     
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+<h:commandButton action="#{prorrogasController.prepareList}" value="Ver Lista" class="btnverlistah"/>    
+</div>
+</div>
+
+    
+</div>
+</h:form>                
+</div>
+ 
+</div> 
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="../resources/Bootstrap 4.1/js/bootstrap.bundle.js" ></script>
+<script src="../resources/js/contrato.js"></script>
+<script src="../resources/js/sololetras.js"></script>
+<script src="../resources/js/solonumeros.js"></script>    
+<script src="../resources/Bootstrap 4.1/js/bootstrap.min.js" ></script>
+    
+</body>  
+   
+</html>
+    
+    
+    
+    
+                                        
+                    
+                    
+                    
+                    
+               

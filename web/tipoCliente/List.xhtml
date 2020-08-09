@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTipoClienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTipoClienteEmpty}" rendered="#{tipoClienteController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tipoClienteController.items.rowCount > 0}">
+                    <h:outputText value="#{tipoClienteController.pagination.pageFirstItem + 1}..#{tipoClienteController.pagination.pageLastItem + 1}/#{tipoClienteController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tipoClienteController.previous}" value="#{bundle.Previous} #{tipoClienteController.pagination.pageSize}" rendered="#{tipoClienteController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tipoClienteController.next}" value="#{bundle.Next} #{tipoClienteController.pagination.pageSize}" rendered="#{tipoClienteController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tipoClienteController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTipoClienteTitle_idtipocliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idtipocliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTipoClienteTitle_nombretipocliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombretipocliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tipoClienteController.prepareView}" value="#{bundle.ListTipoClienteViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tipoClienteController.prepareEdit}" value="#{bundle.ListTipoClienteEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tipoClienteController.destroy}" value="#{bundle.ListTipoClienteDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tipoClienteController.prepareCreate}" value="#{bundle.ListTipoClienteCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTipoClienteIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

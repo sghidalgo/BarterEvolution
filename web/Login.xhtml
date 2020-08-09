@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+  <h:head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="log/css/lo.css"/>
+    <!-- Font-icon css-->
+    <link rel="icon" type="image/png" href="./resources/img/HORIZONTAL_LOGO-removebg-preview.png" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <title>Ingresar</title>
+  </h:head>
+    <h:body>
+   <section class="material-half-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="login-content">
+      <div class="login-box">
+       
+        <h:form class="login-form">
+             
+         <p:growl id="growl" life="3000"/>  
+
+           <a href="index.xhtml"><h1 class="login-head logo1" ><i class="fa fa-lg fa-fw fa-user"></i>Barter <span class="logo2">Evolution</span> </h1></a>
+          <div class="form-group">
+            <h:outputLabel class="control-label"  value="USUARIO"/>
+            <h:inputText class="form-control" required="true" value="#{loginBean.nombreUsuario}"/>
+          </div>
+          <div class="form-group">
+            <h:outputLabel class="control-label" value="CONTRASEÑA"/>
+            <h:inputText  class="form-control" required="true"  value="#{loginBean.password}"  />
+          </div>
+          <div class="form-group">
+            <div class="utility">
+              <p class="olvcontra"><a href="#" data-toggle="flip">¿Olvido su Contraseña?</a></p>
+            </div>
+          </div>
+          <div class="form-group btn-container">
+            <p:commandButton class="btn btn-primary btn-block" update="growl" value="Iniciar Sesión" action="#{loginBean.autenticar()}" />
+          </div>
+        </h:form>
+        <h:form class="forget-form" >
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>¿Olvido su Contraseña ?</h3>
+          <div class="form-group">
+            <label class="control-label">EMAIL</label>
+            <input class="form-control" type="text" placeholder="email"/>
+          </div>
+          <div class="form-group btn-container">
+            <button class="btn btn-primary btn-block"><i class="fa fa-paper-plane"></i>  ENVIAR</button>
+          </div>
+          <div class="form-group mt-3">
+            <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i> Atras </a></p>
+          </div>
+        </h:form>
+      </div>
+    </section>
+    <!-- Essential javascripts for application to work-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="js/pace.min.js"></script>
+    <script type="text/javascript">
+      // Login Page Flipbox control
+      $('.login-content [data-toggle="flip"]').click(function() {
+      	$('.login-box').toggleClass('flipped');
+      	return false;
+      });
+    </script>
+    </h:body>
+</html>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../resources/css/animate.min.css"/>
+   <link rel="stylesheet" href="../resources/Bootstrap 4.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>    
+   <link rel="stylesheet" href="../resources/css/cssmodcontrato.css"/>   
+   <title>Modificar Legalidad</title>
+   </h:head>
+
+
+<body>
+
+<div class=" container">
+<div class="row justify-content-center">
+<div class="col-12 cont">
+<div class="row">       
+
+   
+   
+<!-- Titulo Formulario -->    
+
+<div class="col-11">
+<h6 class="animated bounceInLeft" >MODIFICAR LEGALIDAD</h6>
+<hr class="lineatitulo"></hr> 
+</div>
+</div>    
+    
+   
+<h:form class="needs-validation">  
+<div class="row">
+
+       
+
+<!-- Caja 1 titulo informacion basica --> 
+<div class="form-row justify-content-center" >
+<div class="cajaform row">
+<div class="col-12 tit">Información básica</div>    
+    
+    
+<!-- Campo fecha legalidad-->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputLabel value="Fecha:" for="fechalegalidad" class="input-group-text" />
+</div>  
+<h:inputText id="fechalegalidad" value="#{legalidadArticulosController.selected.fechalegalidad}" title="#{bundle.EditLegalidadArticulosTitle_fechalegalidad}" required="true" requiredMessage="Debes ingresar una fecha" class="form-control">
+<f:convertDateTime pattern="MM/dd/yyyy" />
+</h:inputText>
+<p:message for="fechalegalidad" />    
+</div>   
+</div>   
+</div>
+    
+    
+<!-- campo cedula cliente -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputText value="Cédula cliente:" class="input-group-text"/>
+</div>
+<h:outputText value="#{legalidadArticulosController.selected.cedulacliente}" title="#{bundle.ViewLegalidadArticulosTitle_cedulacliente}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+    
+<!-- campo id articulo -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group ">
+<div class="input-group-prepend"> 
+<h:outputLabel value="No. artículo:" for="idarticulo" class="input-group-text"/>
+</div>  
+<h:selectOneMenu id="idarticulo" value="#{legalidadArticulosController.selected.idarticulo}" title="#{bundle.EditLegalidadArticulosTitle_idarticulo}" required="true" requiredMessage="Debes seleccionar una opción" class="form-control">
+<f:selectItems value="#{articulosController.itemsAvailableSelectOne}"/>
+</h:selectOneMenu>
+<p:message for="idarticulo" />    
+</div>   
+</div>   
+</div>
+
+</div>    
+
+
+<!-- caja 2 titulo informacion legalidad -->
+
+<div class="cajaform row">     
+<div class="col-12 tit">Información legalidad</div>
+
+<!-- id legalidad -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputText value="Id legalidad:" class="input-group-text"/>
+</div>
+<h:outputText value="#{legalidadArticulosController.selected.idlegalidad}" title="#{bundle.ViewLegalidadArticulosTitle_idlegalidad}" class="form-control"/>
+</div>   
+</div>   
+</div>
+    
+<!-- Condicion legalidad -->
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputLabel value="Condición legalidad:" for="condLegalidad" class="input-group-text" />
+</div>
+<h:selectOneMenu id="condLegalidad" value="#{legalidadArticulosController.selected.condLegalidad}" title="#{bundle.EditLegalidadArticulosTitle_condLegalidad}" required="true" requiredMessage="Debes seleccionar una opción" class="form-control">
+<f:selectItems value="#{condicionLegalidadController.itemsAvailableSelectOne}"/>
+</h:selectOneMenu>
+<p:message for="condLegalidad" />    
+</div>   
+</div>   
+</div>
+
+
+<!-- descripcion legalidad -->
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">                  
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<h:outputLabel value="Descripción legalidad:" for="descripcionlegalidad" class="input-group-text" />
+</div>
+<p:inputText id="descripcionlegalidad" maxlength="45" value="#{legalidadArticulosController.selected.descripcionlegalidad}" title="#{bundle.EditLegalidadArticulosTitle_descripcionlegalidad}" required="true" requiredMessage="Completa el campo" class="form-control"
+validatorMessage="Minimo 10 caracteres">
+<f:validateLength minimum="10" />
+</p:inputText>   
+<small id="passwordHelpBlock" class="form-text text-muted" >
+Si la condición de legalidad es Sin Factura debe ingresar CONSTANCIA DE LEGALIDAD ANEXO AL CONTRATO.   
+</small>
+<p:message for="descripcionlegalidad" />    
+</div>   
+</div>   
+</div>
+
+ 
+</div>
+
+
+</div>
+
+
+<!-- botones -->                   
+                    
+<div class="row cajaboton">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<p:commandButton action="#{legalidadArticulosController.update}" value="Guardar" class="btnguardar" />
+<p:commandButton type="reset" class="btncancelar" value="Cancelar" />
+    
+</div>
+
+    
+<div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>     
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+<p:commandButton action="#{legalidadArticulosController.prepareList}" value="Ver Lista" immediate="true" class="btnverlista" />    
+</div>
+</div>
+
+
+     
+</div>
+</h:form>                
+</div>
+ 
+</div> 
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="../resources/Bootstrap 4.1/js/bootstrap.bundle.js" ></script>
+<script src="../resources/js/contrato.js"></script>
+<script src="../resources/js/sololetras.js"></script>
+<script src="../resources/js/solonumeros.js"></script>    
+<script src="../resources/Bootstrap 4.1/js/bootstrap.min.js" ></script>   
+
+    
+</body>  
+   
+</html>
+
+
+
+
+  
